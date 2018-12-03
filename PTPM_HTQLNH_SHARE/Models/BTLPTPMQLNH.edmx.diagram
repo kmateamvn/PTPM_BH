@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="33beb2d315624a37b329d894bbc5d62f" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="BTLQLPHModel.Currency" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Employee" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Function" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Image" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.InvoiceDetail" Width="1.5" PointX="8.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Invoice" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Log" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.LogsApi" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Menu" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.MenuGroup" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.PaymentType" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Restaurant" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Right" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.sysdiagram" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.sysOption" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.TableOrder" Width="1.5" PointX="11.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.Table" Width="1.5" PointX="9" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.User_Restaurant" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.UserRole" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTLQLPHModel.User" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Employees_Images" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Employees_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Employees_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Employees_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_InvoiceDetails_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Invoices_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Invoices_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Menu_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Menu_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_MenuGroups_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_MenuGroups_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Tables_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_User_Restaurant_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_TableOrders_Tables" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_Tables_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_User_Restaurant_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BTLQLPHModel.FK_User_User_Create" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
