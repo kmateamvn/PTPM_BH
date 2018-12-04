@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>14c849d8-585e-4eca-b2e9-31bc5098cbb6</ProjectGuid>
+    <ProjectGuid>{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PTPM_HTQLNH_SHARE</RootNamespace>
@@ -30,24 +30,135 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\BTLPTPMQLNH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BTLPTPMQLNH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BTLPTPMQLNH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BTLPTPMQLNH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BTLPTPMQLNH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Currency.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Function.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvoiceDetail.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogsApi.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuGroup.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentType.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Right.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysOption.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TableOrder.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRole.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Restaurant.cs">
+      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\BTLPTPMQLNH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BTLPTPMQLNH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Models\BTLPTPMQLNH.edmx.diagram">
+      <DependentUpon>BTLPTPMQLNH.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\BTLPTPMQLNH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BTLPTPMQLNH.edmx</DependentUpon>
+      <LastGenOutput>BTLPTPMQLNH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BTLPTPMQLNH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BTLPTPMQLNH.edmx</DependentUpon>
+      <LastGenOutput>BTLPTPMQLNH.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +168,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

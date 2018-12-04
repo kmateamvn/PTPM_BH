@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTPM_HTQLNH_DASHBOARD", "PTPM_HTQLNH_DASHBOARD\PTPM_HTQLNH_DASHBOARD.csproj", "{3A069D9E-4427-492E-9AF7-3D172282C249}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTPM_HTQLNH_SHARE", "PTPM_HTQLNH_SHARE\PTPM_HTQLNH_SHARE.csproj", "{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3A069D9E-4427-492E-9AF7-3D172282C249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A069D9E-4427-492E-9AF7-3D172282C249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A069D9E-4427-492E-9AF7-3D172282C249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C849D8-585E-4ECA-B2E9-31BC5098CBB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
