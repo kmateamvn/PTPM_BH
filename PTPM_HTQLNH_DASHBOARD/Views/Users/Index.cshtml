@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PTPM_HTQLNH_SHARE.Models.User>
+@{
+	ViewBag.Title = "View";
+}
+<div class="card">
+	<div class="card-header">
+		<strong class="card-title">Danh sách người dùng</strong>
+		<div class="pull-right">
+			@Html.ActionLink("Tạo mới", "Create", new {}, new { @class = "btn btn-success btn-sm" })
+			
+		</div>
+	</div>
+	<div class="table-stats order-table ov-h">
+		<table class="table ">
+			<thead class="thead-dark"> 
+				<tr>
+					<th class="serial" style="width:30px">
+					
+					<th>ID</th>
+					<th>Tên đăng nhập</th>
+					<th style="width:150px">Trạng thái</th>
+					<th style="width:150px">Ngày tạo</th>
+					<th></th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					int index = 0;
+				}
+				@foreach (var u in Model)
+				{
+					index++;
+					<tr>
+						<td>
+							@index
+						</td>
+						<td>
+							@u.id
+						</td>
+						<td>
+							@Html.DisplayFor(m => u.login_name)
+						</td>
+						<td>
+							@if (u.status == 1)
+							{
+								<div class="badge badge-complete">Hoạt động</div>
+							}
+							else
+							{
+								<div class="badge badge-pending">Bị khóa</div>
+							}
+						</td>
+						<td>
+							@u.date_create.Value.ToString("dd/MM/yyyy")
+						</td>
+						<td>
+							<a class = "btn btn-danger btn-sm"  href="@Url.Action("Delete",new {id=u.id })" ><i class="fa fa-trash"></i> Xóa</a>
+
+
+                            @Html.ActionLink("Sửa", "Edit", new { id = u.id }, new { @class = "btn btn-info btn-sm" })
+
+
+                        </td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

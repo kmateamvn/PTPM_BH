@@ -1,0 +1,12 @@
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\PTPM_HTQLNH_SHARE.dll.config
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\PTPM_HTQLNH_SHARE.dll
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\PTPM_HTQLNH_SHARE.pdb
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\EntityFramework.dll
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\EntityFramework.SqlServer.dll
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\EntityFramework.xml
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\bin\Debug\EntityFramework.SqlServer.xml
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\obj\Debug\PTPM_HTQLNH_SHARE.csprojAssemblyReference.cache
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\obj\Debug\PTPM_HTQLNH_SHARE.csproj.CoreCompileInputs.cache
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\obj\Debug\PTPM_HTQLNH_SHARE.csproj.CopyComplete
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\obj\Debug\PTPM_HTQLNH_SHARE.dll
+E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\obj\Debug\PTPM_HTQLNH_SHARE.pdb

@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BTLQLPHModelStoreContainer" CdmEntityContainer="BTLPTPM_RES_DBEntities">
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="avartar" ColumnName="avartar" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="touch_id" ColumnName="touch_id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Functions">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Function">
+        <MappingFragment StoreEntitySet="Functions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Image">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bytes" ColumnName="bytes" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceDetails">
+      <EntityTypeMapping TypeName="BTLQLPHModel.InvoiceDetail">
+        <MappingFragment StoreEntitySet="InvoiceDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="vat" ColumnName="vat" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+          <ScalarProperty Name="totalAmountWithVat" ColumnName="totalAmountWithVat" />
+          <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="promotion" ColumnName="promotion" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_address" ColumnName="buyer_address" />
+          <ScalarProperty Name="buyer_tax" ColumnName="buyer_tax" />
+          <ScalarProperty Name="buyer_phone" ColumnName="buyer_phone" />
+          <ScalarProperty Name="buyer_email" ColumnName="buyer_email" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="currency_type" ColumnName="currency_type" />
+          <ScalarProperty Name="transaction_date" ColumnName="transaction_date" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="vat" ColumnName="vat" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+          <ScalarProperty Name="totalAmountWithVat" ColumnName="totalAmountWithVat" />
+          <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+          <ScalarProperty Name="totalAmountWithVatWords" ColumnName="totalAmountWithVatWords" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="invoice_no" ColumnName="invoice_no" />
+          <ScalarProperty Name="invoice_type" ColumnName="invoice_type" />
+          <ScalarProperty Name="template_code" ColumnName="template_code" />
+          <ScalarProperty Name="exc_rate" ColumnName="exc_rate" />
+          <ScalarProperty Name="totalNaturalAmount" ColumnName="totalNaturalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="logdate" ColumnName="logdate" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogsApis">
+      <EntityTypeMapping TypeName="BTLQLPHModel.LogsApi">
+        <MappingFragment StoreEntitySet="LogsApi">
+          <ScalarProperty Name="request_date" ColumnName="request_date" />
+          <ScalarProperty Name="request_content" ColumnName="request_content" />
+          <ScalarProperty Name="request_response" ColumnName="request_response" />
+          <ScalarProperty Name="endpoint" ColumnName="endpoint" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="client_session" ColumnName="client_session" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="tag_image" ColumnName="tag_image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuGroups">
+      <EntityTypeMapping TypeName="BTLQLPHModel.MenuGroup">
+        <MappingFragment StoreEntitySet="MenuGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTypes">
+      <EntityTypeMapping TypeName="BTLQLPHModel.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="tax_code" ColumnName="tax_code" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="hotline" ColumnName="hotline" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="fanpage" ColumnName="fanpage" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="vote" ColumnName="vote" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rights">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Right">
+        <MappingFragment StoreEntitySet="Rights">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BTLQLPHModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysOptions">
+      <EntityTypeMapping TypeName="BTLQLPHModel.sysOption">
+        <MappingFragment StoreEntitySet="sysOptions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableOrders">
+      <EntityTypeMapping TypeName="BTLQLPHModel.TableOrder">
+        <MappingFragment StoreEntitySet="TableOrders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dishid" ColumnName="dishid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="table_id" ColumnName="table_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="BTLQLPHModel.Table">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="p2d_x" ColumnName="p2d_x" />
+          <ScalarProperty Name="p2d_y" ColumnName="p2d_y" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Restaurant">
+      <EntityTypeMapping TypeName="BTLQLPHModel.User_Restaurant">
+        <MappingFragment StoreEntitySet="User_Restaurant">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="res_id" ColumnName="res_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="BTLQLPHModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="function_code" ColumnName="function_code" />
+          <ScalarProperty Name="right_code" ColumnName="right_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BTLQLPHModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="session" ColumnName="session" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_create" ColumnName="user_create" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BTLQLPHModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BTLQLPHModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BTLQLPHModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BTLQLPHModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BTLQLPHModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BTLQLPHModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BTLQLPHModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BTLQLPHModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BTLQLPHModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

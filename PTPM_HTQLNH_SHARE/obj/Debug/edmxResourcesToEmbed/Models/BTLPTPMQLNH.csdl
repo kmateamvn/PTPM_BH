@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BTLQLPHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="rate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="login_id" />
+    </Key>
+    <Property Name="id" Type="Int32" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="login_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="avartar" Type="Int64" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="touch_id" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Image" Relationship="Self.FK_Employees_Images" FromRole="Employees" ToRole="Images" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Employees_Restaurants" FromRole="Employees" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Employees_Users" FromRole="Employees" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Employees_Users1" FromRole="Employees" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="bytes" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="tag" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Images" FromRole="Images" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="InvoiceDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="vat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalAmountWithVat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="discountAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="promotion" Type="Boolean" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceDetails_Invoices" FromRole="InvoiceDetails" ToRole="Invoices" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buyer_name" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="buyer_address" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="buyer_tax" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="buyer_phone" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="buyer_email" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="payment_type" Type="Int32" />
+    <Property Name="currency_type" Type="Int32" />
+    <Property Name="transaction_date" Type="DateTime" Precision="3" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="vat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalAmountWithVat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="discountAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalAmountWithVatWords" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="note" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_no" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="template_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="exc_rate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalNaturalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="InvoiceDetails" Relationship="Self.FK_InvoiceDetails_Invoices" FromRole="Invoices" ToRole="InvoiceDetails" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Invoices_Restaurants" FromRole="Invoices" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Invoices_Users" FromRole="Invoices" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logdate" Type="DateTime" Precision="3" />
+    <Property Name="tag" Type="String" MaxLength="63" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LogsApi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="request_date" Type="DateTime" Precision="3" />
+    <Property Name="request_content" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="request_response" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Name="endpoint" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="client_session" Type="String" MaxLength="63" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="cost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="logo" Type="Int32" />
+    <Property Name="tag_image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="group_id" Type="Int32" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Menu_Restaurants" FromRole="Menu" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Menu_Users" FromRole="Menu" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="MenuGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_MenuGroups_Restaurants" FromRole="MenuGroups" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_MenuGroups_Users" FromRole="MenuGroups" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="full_name" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="short_name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="tax_code" Type="String" MaxLength="63" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="hotline" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="website" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="fanpage" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="63" FixedLength="false" Unicode="false" />
+    <Property Name="vote" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Restaurants" FromRole="Restaurants" ToRole="Employees" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Restaurants" FromRole="Restaurants" ToRole="Invoices" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_Restaurants" FromRole="Restaurants" ToRole="Menu" />
+    <NavigationProperty Name="MenuGroups" Relationship="Self.FK_MenuGroups_Restaurants" FromRole="Restaurants" ToRole="MenuGroups" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Tables_Restaurants" FromRole="Restaurants" ToRole="Tables" />
+    <NavigationProperty Name="User_Restaurant" Relationship="Self.FK_User_Restaurant_Restaurants" FromRole="Restaurants" ToRole="User_Restaurant" />
+  </EntityType>
+  <EntityType Name="Right">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysOption">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="key" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TableOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dishid" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="table_id" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_TableOrders_Tables" FromRole="TableOrders" ToRole="Tables" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="p2d_x" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="p2d_y" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="order_status" Type="Int32" />
+    <Property Name="parent" Type="Int32" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Tables_Restaurants" FromRole="Tables" ToRole="Restaurants" />
+    <NavigationProperty Name="TableOrders" Relationship="Self.FK_TableOrders_Tables" FromRole="Tables" ToRole="TableOrders" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Tables_Users" FromRole="Tables" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User_Restaurant">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="res_id" Type="String" MaxLength="63" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="note" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_User_Restaurant_Restaurants" FromRole="User_Restaurant" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Restaurant_Users" FromRole="User_Restaurant" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="function_code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="function_code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="right_code" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="session" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="user_create" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="is_admin" Type="Boolean" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employees_Users" FromRole="Users" ToRole="Employees" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Users1" FromRole="Users" ToRole="Employees" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Users" FromRole="Users" ToRole="Invoices" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_Users" FromRole="Users" ToRole="Menu" />
+    <NavigationProperty Name="MenuGroups" Relationship="Self.FK_MenuGroups_Users" FromRole="Users" ToRole="MenuGroups" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Tables_Users" FromRole="Users" ToRole="Tables" />
+    <NavigationProperty Name="User_Restaurant" Relationship="Self.FK_User_Restaurant_Users" FromRole="Users" ToRole="User_Restaurant" />
+    <NavigationProperty Name="Users1" Relationship="Self.FK_User_User_Create" FromRole="Users" ToRole="Users1" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_User_User_Create" FromRole="Users1" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_Employees_Images">
+    <End Role="Images" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="login_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceDetails_Invoices">
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="InvoiceDetails" Type="Self.InvoiceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoices">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="InvoiceDetails">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuGroups_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="MenuGroups" Type="Self.MenuGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MenuGroups">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuGroups_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MenuGroups" Type="Self.MenuGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MenuGroups">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Restaurant_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="User_Restaurant" Type="Self.User_Restaurant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Restaurant">
+        <PropertyRef Name="res_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableOrders_Tables">
+    <End Role="Tables" Type="Self.Table" Multiplicity="0..1" />
+    <End Role="TableOrders" Type="Self.TableOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TableOrders">
+        <PropertyRef Name="table_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Tables" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Restaurant_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Restaurant" Type="Self.User_Restaurant" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Restaurant">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User_Create">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Users1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users1">
+        <PropertyRef Name="user_create" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BTLPTPM_RES_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Functions" EntityType="Self.Function" />
+    <EntitySet Name="Images" EntityType="Self.Image" />
+    <EntitySet Name="InvoiceDetails" EntityType="Self.InvoiceDetail" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="LogsApis" EntityType="Self.LogsApi" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="MenuGroups" EntityType="Self.MenuGroup" />
+    <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+    <EntitySet Name="Rights" EntityType="Self.Right" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="sysOptions" EntityType="Self.sysOption" />
+    <EntitySet Name="TableOrders" EntityType="Self.TableOrder" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <EntitySet Name="User_Restaurant" EntityType="Self.User_Restaurant" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Employees_Images" Association="Self.FK_Employees_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Restaurants" Association="Self.FK_Employees_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Users" Association="Self.FK_Employees_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Users1" Association="Self.FK_Employees_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceDetails_Invoices" Association="Self.FK_InvoiceDetails_Invoices">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="InvoiceDetails" EntitySet="InvoiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Restaurants" Association="Self.FK_Invoices_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Users" Association="Self.FK_Invoices_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Restaurants" Association="Self.FK_Menu_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Users" Association="Self.FK_Menu_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuGroups_Restaurants" Association="Self.FK_MenuGroups_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="MenuGroups" EntitySet="MenuGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuGroups_Users" Association="Self.FK_MenuGroups_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MenuGroups" EntitySet="MenuGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_Restaurants" Association="Self.FK_Tables_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Restaurant_Restaurants" Association="Self.FK_User_Restaurant_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="User_Restaurant" EntitySet="User_Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableOrders_Tables" Association="Self.FK_TableOrders_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="TableOrders" EntitySet="TableOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_Users" Association="Self.FK_Tables_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Restaurant_Users" Association="Self.FK_User_Restaurant_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="User_Restaurant" EntitySet="User_Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User_Create" Association="Self.FK_User_User_Create">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users1" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BTLQLPHModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BTLQLPHModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
