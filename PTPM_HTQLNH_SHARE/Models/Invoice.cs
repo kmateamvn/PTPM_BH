@@ -44,6 +44,8 @@ namespace PTPM_HTQLNH_SHARE.Models
         public string template_code { get; set; }
         public Nullable<decimal> exc_rate { get; set; }
         public Nullable<decimal> totalNaturalAmount { get; set; }
+        public string invoice_seri { get; set; }
+        public string invoice_pattern { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }

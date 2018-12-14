@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PTPM_HTQLNH_SHARE.Models.Invoice>
+@{
+    ViewBag.Title = "Invoices";
+}
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Danh sách hóa đơn</strong>
+        <div class="pull-right">
+            @Html.ActionLink("Tạo mới", "Create", new { }, new { @class = "btn btn-success btn-sm" })
+
+        </div>
+    </div>
+    <div class="table-stats order-table ov-h">
+        <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="serial" style="width:30px">
+
+                    <th>Số hóa đơn</th>
+                    <th>Tên khách hàng</th>
+                    <th style="width:150px">Ngày hóa đơn</th>
+                    <th>Hình thức thanh toán</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 0;
+                }
+                @foreach (var iv in Model)
+                {
+                    index++;
+                <tr onclick="location.href = '@Url.Action("Details",new {id=iv.id })'" style="cursor:pointer">
+                    <td>
+                        @index
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => iv.invoice_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => iv.buyer_name)
+                    </td>
+                    <td>
+                        @iv.transaction_date.Value.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>@Html.DisplayFor(m => iv.payment_type)</td>
+                    <td>@Html.DisplayFor(m=>iv.totalAmount)</td>
+                    <td></td>
+
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete",new {id=iv.id })"><i class="fa fa-trash"></i> Xóa</a>
+                       
+
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

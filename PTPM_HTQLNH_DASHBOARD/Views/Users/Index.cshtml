@@ -54,11 +54,12 @@
 						<td>
 							@u.date_create.Value.ToString("dd/MM/yyyy")
 						</td>
-						<td>
-							<a class = "btn btn-danger btn-sm"  href="@Url.Action("Delete",new {id=u.id })" ><i class="fa fa-trash"></i> Xóa</a>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete",new {id=u.id })"><i class="fa fa-trash"></i> Xóa</a>
+                            <a class="btn btn-info btn-sm" href="@Url.Action("Edit",new {id=u.id })"><i class="fa fa-pencil"></i> Sửa</a>
 
 
-                            @Html.ActionLink("Sửa", "Edit", new { id = u.id }, new { @class = "btn btn-info btn-sm" })
+                            @*@Html.ActionLink("Sửa", "Edit", new { id = u.id }, new { @class = "btn btn-info btn-sm" }) *@
 
 
                         </td>

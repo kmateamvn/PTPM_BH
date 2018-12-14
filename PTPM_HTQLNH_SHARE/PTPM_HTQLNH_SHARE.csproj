@@ -88,6 +88,7 @@
     <Compile Include="Models\InvoiceDetail.cs">
       <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InvoiceViewModel.cs" />
     <Compile Include="Models\Log.cs">
       <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
     </Compile>
@@ -116,9 +117,6 @@
       <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StatusModelView.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysOption.cs">
       <DependentUpon>BTLPTPMQLNH.tt</DependentUpon>
     </Compile>

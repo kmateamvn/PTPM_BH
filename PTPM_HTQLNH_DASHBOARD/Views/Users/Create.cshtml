@@ -22,10 +22,10 @@
                 </button>
             </div>
         }
-        @using (Html.BeginForm(action ?? "Create", "Users", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Html.BeginForm(action ?? "Create", "Users", FormMethod.Post, new { @class= "form-horizontal" }))
         {
             <div class="form-group">
-                <label class="control-label col-sm-2">Tài khoản</label>
+                <label  class="control-label col-sm-2" for="text" >Tài khoản</label>
                 <div class="col-sm-10">
                     @Html.TextBoxFor(m => m.id, new {  type="hidden" })
 

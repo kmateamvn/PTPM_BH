@@ -13,7 +13,7 @@ namespace PTPM_HTQLNH_DASHBOARD.Controllers
         // GET: Users
         public ActionResult Index()
         {
-          /* User u1 =  Helper.db.Users.Where(m => m.id == 1).FirstOrDefault();
+          /*User u1 =  Helper.db.Users.Where(m => m.id == 1).FirstOrDefault();
             User u2 = (from u in Helper.db.Users where u.id == 1 select u).FirstOrDefault();
             var join = (from u_r in Helper.db.User_Restaurant
                         join r in Helper.db.Restaurants on u_r.res_id equals r.id

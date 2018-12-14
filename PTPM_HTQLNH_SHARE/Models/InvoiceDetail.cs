@@ -26,6 +26,9 @@ namespace PTPM_HTQLNH_SHARE.Models
         public Nullable<int> invoice_id { get; set; }
         public Nullable<bool> promotion { get; set; }
         public Nullable<System.DateTime> date_create { get; set; }
+        public string unit { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public Nullable<decimal> quantity { get; set; }
     
         public virtual Invoice Invoice { get; set; }
     }

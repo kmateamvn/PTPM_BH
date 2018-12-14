@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\C#Project\PTPM_HTQLNH_DASHBOARD\PTPM_HTQLNH_SHARE\Models\BTLPTPMQLNH.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\git\BTLPTPM\PTPM_HTQLNH_SHARE\Models\BTLPTPMQLNH.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

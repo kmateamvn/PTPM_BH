@@ -40,7 +40,6 @@ namespace PTPM_HTQLNH_SHARE.Models
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<Restaurant> Restaurants { get; set; }
         public virtual DbSet<Right> Rights { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<sysOption> sysOptions { get; set; }
         public virtual DbSet<TableOrder> TableOrders { get; set; }
         public virtual DbSet<Table> Tables { get; set; }

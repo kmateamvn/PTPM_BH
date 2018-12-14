@@ -70,6 +70,9 @@
     <Property Name="promotion" Type="Boolean" />
     <Property Name="date_create" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceDetails_Invoices" FromRole="InvoiceDetails" ToRole="Invoices" />
+    <Property Name="unit" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="Invoice">
     <Key>
@@ -102,6 +105,8 @@
     <NavigationProperty Name="InvoiceDetails" Relationship="Self.FK_InvoiceDetails_Invoices" FromRole="Invoices" ToRole="InvoiceDetails" />
     <NavigationProperty Name="Restaurant" Relationship="Self.FK_Invoices_Restaurants" FromRole="Invoices" ToRole="Restaurants" />
     <NavigationProperty Name="User" Relationship="Self.FK_Invoices_Users" FromRole="Invoices" ToRole="Users" />
+    <Property Name="invoice_seri" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_pattern" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Log">
     <Key>
@@ -204,16 +209,6 @@
     <Property Name="date_create" Type="DateTime" Precision="3" />
     <Property Name="user_create" Type="DateTime" Precision="3" />
     <Property Name="status" Type="Int32" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="sysOption">
     <Key>
@@ -521,7 +516,6 @@
     <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
     <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
     <EntitySet Name="Rights" EntityType="Self.Right" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="sysOptions" EntityType="Self.sysOption" />
     <EntitySet Name="TableOrders" EntityType="Self.TableOrder" />
     <EntitySet Name="Tables" EntityType="Self.Table" />
